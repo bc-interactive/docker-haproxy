@@ -17,8 +17,8 @@ RUN wget -nv --compression=gzip -O "upx-3.96-amd64_linux.tar.xz" "https://github
   && chmod +x /upx
 
 FROM downloader AS haproxy
-ARG HAPROXY_VERSION=2.3.9
-ARG HAPROXY_SHA256=77110bc1272bad18fff56b30f4614bcc1deb50600ae42cb0f0b161fc41e2ba96
+ARG HAPROXY_VERSION=2.3.10
+ARG HAPROXY_SHA256=9946e0cfc83f29072b3431e37246221cf9d4a9d28a158c075714d345266f4f35
 RUN wget -nv --compression=gzip -O "haproxy-${HAPROXY_VERSION}.tar.gz" "https://www.haproxy.org/download/2.3/src/haproxy-${HAPROXY_VERSION}.tar.gz" \
   && echo "${HAPROXY_SHA256} *haproxy-${HAPROXY_VERSION}.tar.gz" | sha256sum -c \
   && mkdir -p /usr/src/haproxy \
